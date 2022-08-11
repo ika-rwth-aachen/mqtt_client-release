@@ -1,0 +1,12 @@
+Source: ros-noetic-mqtt-client
+Section: misc
+Priority: optional
+Maintainer: Lennart Reiher <lennart.reiher@rwth-aachen.de>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-catkin, ros-noetic-message-generation, ros-noetic-nodelet, ros-noetic-paho-mqtt-cpp, ros-noetic-roscpp, ros-noetic-std-msgs, ros-noetic-topic-tools
+Homepage: http://wiki.ros.org/mqtt_client
+Standards-Version: 3.9.2
+
+Package: ros-noetic-mqtt-client
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-message-generation, ros-noetic-message-runtime, ros-noetic-nodelet, ros-noetic-paho-mqtt-cpp, ros-noetic-roscpp, ros-noetic-std-msgs, ros-noetic-topic-tools
+Description: Provides a nodelet that enables connected ROS-based devices or robots to exchange ROS messages via an MQTT broker using the MQTT protocol.
