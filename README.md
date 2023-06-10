@@ -1,3 +1,28 @@
+## mqtt_client (iron) - 2.0.1-1
+
+The packages in the `mqtt_client` repository were released into the `iron` distro by running `/usr/local/bin/bloom-release --rosdistro iron --track iron mqtt_client --edit` on `Sat, 10 Jun 2023 15:25:03 -0000`
+
+These packages were released:
+- `mqtt_client`
+- `mqtt_client_interfaces`
+
+Version of package(s) in repository `mqtt_client`:
+
+- upstream repository: https://github.com/ika-rwth-aachen/mqtt_client.git
+- release repository: unknown
+- rosdistro version: `null`
+- old version: `null`
+- new version: `2.0.1-1`
+
+Versions of tools used:
+
+- bloom version: `0.11.2`
+- catkin_pkg version: `0.5.2`
+- rosdep version: `0.22.2`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## mqtt_client (humble) - 2.0.1-1
 
 The packages in the `mqtt_client` repository were released into the `humble` distro by running `/usr/local/bin/bloom-release --rosdistro humble --track humble mqtt_client --edit` on `Sat, 10 Jun 2023 15:20:54 -0000`
