@@ -1,0 +1,12 @@
+Source: ros-noetic-mqtt-client-interfaces
+Section: misc
+Priority: optional
+Maintainer: Lennart Reiher <lennart.reiher@rwth-aachen.de>
+Build-Depends: debhelper (>= 9.0.0), ros-noetic-catkin, ros-noetic-message-generation, ros-noetic-ros-environment, ros-noetic-std-msgs
+Homepage: http://wiki.ros.org/mqtt_client
+Standards-Version: 3.9.2
+
+Package: ros-noetic-mqtt-client-interfaces
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ros-noetic-message-generation, ros-noetic-message-runtime, ros-noetic-ros-environment, ros-noetic-std-msgs
+Description: Message and service definitions for mqtt_client
