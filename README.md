@@ -1,3 +1,28 @@
+## mqtt_client (noetic) - 2.1.0-1
+
+The packages in the `mqtt_client` repository were released into the `noetic` distro by running `/usr/local/bin/bloom-release --rosdistro noetic --track noetic mqtt_client` on `Mon, 18 Sep 2023 08:29:56 -0000`
+
+These packages were released:
+- `mqtt_client`
+- `mqtt_client_interfaces`
+
+Version of package(s) in repository `mqtt_client`:
+
+- upstream repository: https://github.com/ika-rwth-aachen/mqtt_client.git
+- release repository: https://github.com/ika-rwth-aachen/mqtt_client-release.git
+- rosdistro version: `2.0.1-1`
+- old version: `2.0.1-1`
+- new version: `2.1.0-1`
+
+Versions of tools used:
+
+- bloom version: `0.11.2`
+- catkin_pkg version: `1.0.0`
+- rosdep version: `0.22.2`
+- rosdistro version: `0.9.0`
+- vcstools version: `0.1.42`
+
+
 ## mqtt_client (rolling) - 2.0.1-1
 
 The packages in the `mqtt_client` repository were released into the `rolling` distro by running `/usr/local/bin/bloom-release --rosdistro rolling --track rolling mqtt_client --edit` on `Sat, 10 Jun 2023 15:28:58 -0000`
