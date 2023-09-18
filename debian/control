@@ -1,0 +1,12 @@
+Source: ros-humble-mqtt-client
+Section: misc
+Priority: optional
+Maintainer: Lennart Reiher <lennart.reiher@rwth-aachen.de>
+Build-Depends: debhelper (>= 9.0.0), libfmt-dev, libpaho-mqtt-dev, libpaho-mqttpp-dev, ros-humble-ament-cmake, ros-humble-mqtt-client-interfaces, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rcpputils, ros-humble-ros-environment, ros-humble-std-msgs, ros-humble-ros-workspace
+Homepage: http://wiki.ros.org/mqtt_client
+Standards-Version: 3.9.2
+
+Package: ros-humble-mqtt-client
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libfmt-dev, libpaho-mqtt-dev, libpaho-mqttpp-dev, ros-humble-mqtt-client-interfaces, ros-humble-rclcpp, ros-humble-rclcpp-components, ros-humble-rcpputils, ros-humble-ros-environment, ros-humble-std-msgs, ros-humble-ros-workspace
+Description: Node that enables connected ROS-based devices or robots to exchange ROS messages via an MQTT broker using the MQTT protocol.
