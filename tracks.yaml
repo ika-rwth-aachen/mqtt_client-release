@@ -1,3 +1,4 @@
+release_repo_url: https://github.com/ika-rwth-aachen/mqtt_client-release.git
 tracks:
   humble:
     actions:
