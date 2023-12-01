@@ -1,0 +1,57 @@
+ros-noetic-mqtt-client-interfaces (2.2.0-2focal) focal; urgency=high
+
+  * Merge pull request #35 <https://github.com/ika-rwth-aachen/mqtt_client/issues/35> from mvccogo/main
+    Dynamic registration of topics
+  * Contributors: Lennart Reiher, Matheus V. C. Cogo, mvccogo
+
+ -- Lennart Reiher <lennart.reiher@rwth-aachen.de>  Wed, 29 Nov 2023 00:00:00 -0000
+
+ros-noetic-mqtt-client-interfaces (2.1.0-2focal) focal; urgency=high
+
+
+
+ -- Lennart Reiher <lennart.reiher@rwth-aachen.de>  Mon, 18 Sep 2023 00:00:00 -0000
+
+ros-noetic-mqtt-client-interfaces (2.0.1-2focal) focal; urgency=high
+
+  * fix unrecognized build type with catkin_make_isolated
+    order of statements is somehow revelant; catkin_make_isolated would not detect the build type; build farm jobs were failing; https://build.ros.org/job/Ndev__mqtt_client__ubuntu_focal_amd64/10/console
+  * Contributors: Lennart Reiher
+
+ -- Lennart Reiher <lennart.reiher@rwth-aachen.de>  Sat, 10 Jun 2023 00:00:00 -0000
+
+ros-noetic-mqtt-client-interfaces (2.0.0-2focal) focal; urgency=high
+
+  * Merge pull request #23 from ika-rwth-aachen/docker-ros
+    Integrate docker-ros
+  * Merge pull request #16 from ika-rwth-aachen/dev/ros2
+    Add support for ROS2
+  * Contributors: Lennart Reiher
+
+ -- Lennart Reiher <lennart.reiher@rwth-aachen.de>  Sat, 10 Jun 2023 00:00:00 -0000
+
+ros-noetic-mqtt-client-interfaces (1.1.0-2focal) focal; urgency=high
+
+
+
+ -- Lennart Reiher <lennart.reiher@rwth-aachen.de>  Thu, 13 Oct 2022 00:00:00 -0000
+
+ros-noetic-mqtt-client-interfaces (1.0.2-2focal) focal; urgency=high
+
+
+
+ -- Lennart Reiher <lennart.reiher@rwth-aachen.de>  Fri, 07 Oct 2022 00:00:00 -0000
+
+ros-noetic-mqtt-client-interfaces (1.0.1-2focal) focal; urgency=high
+
+
+
+ -- Lennart Reiher <lennart.reiher@rwth-aachen.de>  Thu, 11 Aug 2022 00:00:00 -0000
+
+ros-noetic-mqtt-client-interfaces (1.0.0-2focal) focal; urgency=high
+
+
+
+ -- Lennart Reiher <lennart.reiher@rwth-aachen.de>  Thu, 02 Jun 2022 00:00:00 -0000
+
+
