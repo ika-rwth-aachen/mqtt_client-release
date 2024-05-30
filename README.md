@@ -6,7 +6,7 @@
   <a href="https://github.com/ika-rwth-aachen/mqtt_client/actions/workflows/industrial_ci.yml"><img src="https://github.com/ika-rwth-aachen/mqtt_client/actions/workflows/industrial_ci.yml/badge.svg"/></a>
   <a href="https://github.com/ika-rwth-aachen/mqtt_client/actions/workflows/docker-ros.yml"><img src="https://github.com/ika-rwth-aachen/mqtt_client/actions/workflows/docker-ros.yml/badge.svg"/></a>
   <img src="https://img.shields.io/badge/ROS-noetic-blueviolet"/>
-  <img src="https://img.shields.io/badge/ROS 2-humble|iron|rolling-blueviolet"/>
+  <img src="https://img.shields.io/badge/ROS 2-humble|iron|jazzy|rolling-blueviolet"/>
   <a href="https://github.com/ika-rwth-aachen/mqtt_client"><img src="https://img.shields.io/github/stars/ika-rwth-aachen/mqtt_client?style=social"/></a>
 </p>
 
@@ -16,9 +16,7 @@ The *mqtt_client* package provides a ROS nodelet or ROS 2 component node that en
 > This repository is open-sourced and maintained by the [**Institute for Automotive Engineering (ika) at RWTH Aachen University**](https://www.ika.rwth-aachen.de/).  
 > **V2X Communication** is one of many research topics within our [*Vehicle Intelligence & Automated Driving*](https://www.ika.rwth-aachen.de/en/competences/fields-of-research/vehicle-intelligence-automated-driving.html) domain.  
 > If you would like to learn more about how we can support your automated driving or robotics efforts, feel free to reach out to us!  
-> &nbsp;&nbsp;&nbsp;&nbsp; *Timo Woopen - Manager Research Area Vehicle Intelligence & Automated Driving*  
-> &nbsp;&nbsp;&nbsp;&nbsp; *+49 241 80 23549*  
-> &nbsp;&nbsp;&nbsp;&nbsp; *timo.woopen@ika.rwth-aachen.de*  
+> :email: ***opensource@ika.rwth-aachen.de***
 
 - [Installation](#installation)
   - [docker-ros](#docker-ros)
@@ -275,58 +273,66 @@ client:
 
 ```yaml
 bridge:
-  ros2mqtt:            # Array specifying which ROS topics to map to which MQTT topics
+  ros2mqtt:              # Array specifying which ROS topics to map to which MQTT topics
     - ros_topic:         # ROS topic whose messages are transformed to MQTT messages
       mqtt_topic:        # MQTT topic on which the corresponding ROS messages are sent to the broker
       primitive:         # [false] whether to publish as primitive message
       inject_timestamp:  # [false] whether to attach a timestamp to a ROS2MQTT payload (for latency computation on receiver side)
       advanced:
         ros:
-          queue_size:      # [1] ROS subscriber queue size
+          queue_size:    # [1] ROS subscriber queue size
         mqtt:
-          qos:             # [0] MQTT QoS value
-          retained:        # [false] whether to retain MQTT message
-  mqtt2ros:            # Array specifying which MQTT topics to map to which ROS topics
+          qos:           # [0] MQTT QoS value
+          retained:      # [false] whether to retain MQTT message
+  mqtt2ros:              # Array specifying which MQTT topics to map to which ROS topics
     - mqtt_topic:        # MQTT topic on which messages are received from the broker
       ros_topic:         # ROS topic on which corresponding MQTT messages are published
       primitive:         # [false] whether to publish as primitive message (if coming from non-ROS MQTT client)
       advanced:
         mqtt:
-          qos:             # [0] MQTT QoS value
+          qos:           # [0] MQTT QoS value
         ros:
-          queue_size:        # [1] ROS publisher queue size
-          latched:           # [false] whether to latch ROS message
+          queue_size:    # [1] ROS publisher queue size
+          latched:       # [false] whether to latch ROS message
 ```
 
 ##### ROS 2
 
 ```yaml
 bridge:
-  ros2mqtt:            # Object specifying which ROS topics to map to which MQTT topics
-    ros_topics:          # Array specifying which ROS topics to bridge
+  ros2mqtt:                # Object specifying which ROS topics to map to which MQTT topics
+    ros_topics:            # Array specifying which ROS topics to bridge
       - {{ ros_topic_name }} # The ROS topic that should be bridged, corresponds to the sub-object in the YAML
     {{ ros_topic_name }}:
       mqtt_topic:          # MQTT topic on which the corresponding ROS messages are sent to the broker
       primitive:           # [false] whether to publish as primitive message
+      ros_type:            # [*empty*] If set, the ROS msg type provided will be used. If empty, the type is automatically deduced via the publisher
       inject_timestamp:    # [false] whether to attach a timestamp to a ROS2MQTT payload (for latency computation on receiver side)
       advanced:
         ros:
-          queue_size:        # [1] ROS subscriber queue size
+          queue_size:      # [1] ROS subscriber queue size
+          qos:
+            reliability:   # [auto] One of "auto", "system_default", "reliable", "best_effort". If auto, the QoS is automatically determined via the publisher
+            durability:    # [auto] One of "auto", "system_default", "volatile", "transient_local". If auto, the QoS is automatically determined via the publisher
         mqtt:
-          qos:               # [0] MQTT QoS value
-          retained:          # [false] whether to retain MQTT message
-  mqtt2ros:            # Object specifying which MQTT topics to map to which ROS topics
-    mqtt_topics:         # Array specifying which ROS topics to bridge
+          qos:             # [0] MQTT QoS value
+          retained:        # [false] whether to retain MQTT message
+  mqtt2ros:                # Object specifying which MQTT topics to map to which ROS topics
+    mqtt_topics:           # Array specifying which ROS topics to bridge
       - {{ mqtt_topic_name }} # The MQTT topic that should be bridged, corresponds to the sub-object in the YAML
     {{ mqtt_topic_name }}:
       ros_topic:           # ROS topic on which corresponding MQTT messages are published
+      ros_type:            # [*empty*] If set, the ROS msg type provided will be used. If empty, the type is automatically deduced via the MQTT message
       primitive:           # [false] whether to publish as primitive message (if coming from non-ROS MQTT client)
       advanced:
         mqtt:
-          qos:               # [0] MQTT QoS value
+          qos:             # [0] MQTT QoS value
         ros:
-          queue_size:          # [1] ROS publisher queue size
-          latched:             # [false] whether to latch ROS message
+          queue_size:      # [1] ROS publisher queue size
+          latched:         # [false] whether to latch ROS message
+          qos:
+            reliability:   # [system_default] One of "system_default", "reliable", "best_effort". 
+            durability:    # [system_default] One of "system_default", "volatile", "transient_local". 
 ```
 
 ## Primitive Messages
